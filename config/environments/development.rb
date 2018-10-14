@@ -4,8 +4,21 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :authetication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 2525,
+    :domain => 'sandbox7de42d15ed254d0db6930d075b5d3af0.mailgun.org',
+    :user_name => 'postmaster@sandbox7de42d15ed254d0db6930d075b5d3af0.mailgun.org',
+    :password => ENV['mailgunpasswd'],
+     :enable_starttls_auto => true,
+    :ssl =>false,
+    :from => 'jdevine82@gmail.com'
+   }
   config.cache_classes = false
-
+   config.action_mailer.default_url_options = { host: "https://hall-stream-jdevine82.c9users.io" }
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -27,7 +40,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -53,8 +66,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #default url options
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+ # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # showing mail in browser
-  config.action_mailer.delivery_method = :letter_opener
+  #config.action_mailer.delivery_method = :letter_opener
 end

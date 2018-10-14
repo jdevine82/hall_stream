@@ -34,6 +34,9 @@ gem 'devise'
 
 # invitation model integrated
 gem 'devise_invitable'
+gem 'mailgun-ruby'
+gem 'mailgun_rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -43,7 +46,7 @@ group :development, :test do
   gem 'letter_opener'
 
   # Use mysql as the database for Active Record
-  gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'sqlite3'
 end
 
 group :development do
@@ -55,9 +58,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   #gem for support the rails panel in google crome extension
   gem 'meta_request'
+  
+
 
   #for heroku
-  gem 'heroku'
+
 end
 
 group :heroku do
