@@ -4,5 +4,6 @@ class Patron < ApplicationRecord
   # devise :database_authenticatable, :registerable, :confirmable,
   #        :recoverable, :rememberable, :trackable, :validatable
   # self.abstract_class = true
+  
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 end
