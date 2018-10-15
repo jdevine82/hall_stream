@@ -1,6 +1,5 @@
 class MeetingChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
     stream_from "meeting_channel"
   end
 

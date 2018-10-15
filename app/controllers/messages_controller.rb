@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
     if message.save
       ActionCable.server.broadcast 'meeting_channel',
                                    content:  message.content,
-                                   user: message.user.email
+                                   username: message.user.email
    
     end
   end
