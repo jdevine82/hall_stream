@@ -6,5 +6,8 @@ App.meeting = App.cable.subscriptions.create "MeetingChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-      alert data.content
-    # Called when there's incoming data on the websocket for this channel
+    
+    unless data.content.blank?
+      $('#messages-table').append '<div class="message">' +
+        '<div class="message-user">' + data.user + ":" + '</div>' +
+        '<div class="message-content">' + data.content + '</div>' + '</div>'
