@@ -70,4 +70,5 @@ Rails.application.configure do
 
   # showing mail in browser
   #config.action_mailer.delivery_method = :letter_opener
+  config.action_cable.allowed_request_origins = ['https://hall-stream-jdevine82.c9users.io' ]
 end
