@@ -6,7 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:967e2e9f06bbb44e4e48f88c9186d25e@spinyfin.redistogo.com:11198/
+  url: <%= ENV['REDISTOGO_URL'] %>
 
 heroku:
   adapter: redis
