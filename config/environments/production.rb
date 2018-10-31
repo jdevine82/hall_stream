@@ -1,6 +1,21 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+ config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :authetication => :plain,
+    :address => "smtp.mailgun.org",
+    :port => 2525,
+    :domain => 'sandbox7de42d15ed254d0db6930d075b5d3af0.mailgun.org',
+    :user_name => 'postmaster@sandbox7de42d15ed254d0db6930d075b5d3af0.mailgun.org',
+    :password => ENV['mailgunpasswd'],
+     :enable_starttls_auto => true,
+    :ssl =>false,
+    :from => 'jdevine82@gmail.com'
+   }
+  config.cache_classes = false
+   config.action_mailer.default_url_options = { host: "https://grisly-broomstick-52327.herokuapp.com/" }
+  # Do not eager load code on boot.
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -95,4 +110,8 @@ Rails.application.configure do
                                               :sender_address => %{"notifier" <notifier@example.com>},
                                               :exception_recipients => %w{exceptions@example.com}
                                           }
+                                          
+    config.action_cable.url = 'wss://grisly-broomstick-52327.herokuapp.com/cable'
+    config.action_cable.allowed_request_origins = [
+    'https://grisly-broomstick-52327.herokuapp.com' ]
 end

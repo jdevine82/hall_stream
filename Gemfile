@@ -59,6 +59,7 @@ group :development do
   #gem for support the rails panel in google crome extension
   gem 'meta_request'
   gem 'sqlite3'
+  gem 'redis',                   '3.3.1'
   
 
 
