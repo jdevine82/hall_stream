@@ -10,4 +10,4 @@ production:
 
 heroku:
   adapter: redis
-  url: <%= ENV['REDIS_HOST_URL'] %>
+  url: <%= ENV['REDISTOGO_URL'] %>
