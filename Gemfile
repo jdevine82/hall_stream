@@ -36,6 +36,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'mailgun-ruby'
 gem 'mailgun_rails'
+ gem 'redis',                   '3.3.1'
 
 
 group :development, :test do
@@ -59,7 +60,7 @@ group :development do
   #gem for support the rails panel in google crome extension
   gem 'meta_request'
   gem 'sqlite3'
-  gem 'redis',                   '3.3.1'
+ 
   
 
 
