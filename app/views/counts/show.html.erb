@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Listeners:</strong>
+  <%= @count.listeners %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @count.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_count_path(@count) %> |
+<%= link_to 'Back', counts_path %>
