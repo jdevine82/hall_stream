@@ -1,11 +1,18 @@
-
 <div class="row">
   <div class="col-sm-12 text-xs-center bootstrap-welcome">
     <h1>Welcome <%= current_user.email %></h1>
+    <p>Welcome to the West Wyalong Stream Service. Please update the count below with the number of listeners
+    who are benefiting from the program. Also please feel free to add meaningful answers to the comments box 
+    below for the brothers to pass on during the meeting.</p>
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+    <%= render 'counts/form', count: @count %>
+    </div> 
+    
     <p> <%= link_to 'messages' , messages_path(current_user) %></p>
     <p><%= link_to 'edit profile', edit_user_registration_path(current_user) %></p>
     <p><%= link_to 'logout', eval("destroy_#{current_user.type.downcase}_session_path"), method: :delete %></p>
 
-
   </div>
 </div>
+
