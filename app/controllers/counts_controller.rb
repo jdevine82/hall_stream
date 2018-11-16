@@ -8,7 +8,7 @@ class CountsController < InheritedResources::Base
       if count.save
         redirect_to counts_path
       else
-        flash[:danger] = "You will need to edit your existing entry not create a new one!"
+        flash[:error] = "You will need to edit your existing entry not create a new one!"
         redirect_to counts_path
      end
     end
@@ -27,8 +27,9 @@ class CountsController < InheritedResources::Base
      
      def index
      
-     @total_listeners ||= Count.sum( :listeners )
+   
      @counts = Count.where('updated_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
+       @total_listeners ||= @counts.sum( :listeners )
     end
     
   private
