@@ -24,6 +24,12 @@ class CountsController < InheritedResources::Base
         count.listeners = 1
       end
      end
+     
+     def index
+     
+     @total_listeners ||= Count.sum( :listeners )
+     @counts = Count.where('updated_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
+    end
     
   private
 
