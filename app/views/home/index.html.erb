@@ -1,31 +1,41 @@
-<div class="row">
-  <div class="col-sm-12 text-xs-center bootstrap-welcome">
-    <h1>Welcome <%= current_user.email %></h1>
-    <p>Welcome to the West Wyalong Stream Service. Please update the count below with the number of listeners
+<div class="d-flex flex-column">
+  <div class="d-flex flex-row">
+    <h1 class="h1 MainHeading">Welcome <%= current_user.email %></h1>
+    <p class="p">Welcome to the West Wyalong Stream Service. Please update the count below with the number of listeners
     who are benefiting from the program. Also please feel free to add meaningful answers to the comments box 
     below for the brothers to pass on during the meeting.</p>
+    </div>
     
-    <div class="col-sm-12 col-md-6 col-lg-4">
-    <%= render 'counts/form', count: @count %>
-    </div> 
+    <div class=" flex-row">
+   <div class= "col-md-6 col-sm-12">
+      <%= render 'counts/form', count: @count %>
+     </div> 
+     <div class= "col-md-6 col-sm-12">
+       <p> <audio controls id="stream"  autoplay="autoplay" ><source src="http://d2dmsjg477kh4r.cloudfront.net" type="audio/mpeg"> Audio not supported</audio>
+         </p>  
+        
+     </div>
+  </div>
+  
+  <div class="flex-row ">
     
-    <br>
-    <br>
- <p><center><audio controls id="stream"  autoplay="autoplay" ><source src="http://d2dmsjg477kh4r.cloudfront.net" type="audio/mpeg"> Audio not supported</audio>
-    </center>
-    </p>
-     <div class="col-sm-12 col-md-6 col-lg-4">
-
-     <div class="message-wr">
+     <div class="message-wr col-sm-12 ">
        <%= render 'messages/messages', messages: @message %>
        <%= render 'messages/message_form',  messages: @message%>
      </div>
-    </div> 
-    <br>
-    <p> <%= link_to 'messages' , messages_path(current_user) %></p>
-    <p><%= link_to 'edit profile', edit_user_registration_path(current_user) %></p>
-    <p><%= link_to 'logout', eval("destroy_#{current_user.type.downcase}_session_path"), method: :delete %></p>
+  
+    
+  </div>
+  <br>
+  
+  <div class="flex-row ">
+    <div class="col-sm-12">
 
+ <%= link_to 'edit profile', edit_user_registration_path(current_user), :class =>"btn btn-primary" %>
+  <%= link_to 'logout', eval("destroy_#{current_user.type.downcase}_session_path"), method: :delete, :class => "btn btn-danger" %> 
+   
+    </div>
   </div>
 </div>
+
 
