@@ -1,4 +1,6 @@
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section
+
+
+html, body, div, span, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section
   border: 0
   font-family: helvetica, sans
   font-size: 16px
@@ -6,6 +8,29 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   margin: 0
   padding: 0
   vertical-align: baseline
+  
+.MainHeading 
+  /* Extra small devices (phones, less than 768px) */
+  font-size: 1em
+
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) 
+    font-size: 2em
+  
+
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: 992px) 
+    font-size: 2.5em
+  
+
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) 
+    font-size: 3em
+  
+
+
+  
+ 
 
 html
   background-color: #fcfaf5
@@ -132,7 +157,7 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"]
-  box-shadow: 0 3px 0 0 rgba(0,0,0,0.1) inset
+
   box-sizing: border-box
   border: 0
   color: #999
@@ -210,15 +235,16 @@ button, input[type="submit"]
       box-shadow: 0 -1px 0 0 rgba(#e67642,0.3) inset, 0 2px 0 0 rgba(#e67642,0.3)
 
 .message-wr
-  height: 75vh
+  height: 70vh
   margin: auto
   width: 80vw
+  padding-top: 10px
 
 .messages
   background-color: #fff
   box-shadow: 0 0 0 5px #f4f2ed inset
   box-sizing: border-box
-  height: 87%
+  height: 80%
   overflow: scroll
   padding: 20px
 
@@ -235,6 +261,7 @@ button, input[type="submit"]
   > div
     display: table-cell
     padding: 13px 10px 10px
+   
 
 .message-user
   color: #666
@@ -243,17 +270,20 @@ button, input[type="submit"]
 
 .message-content
   width: 100%
+  word-break: break-all
+  
 
 .message-input
   background-color: rgba(0,0,0,0.03)
   box-sizing: border-box
-  height: 13%
+  height: 15%
   padding: 0 5px 5px
   form
     height: 100%
   textarea
     height: 100%
     width: 100%
-
+  input
+    display: none
 
 
